@@ -1,7 +1,7 @@
-
-
-<% if user_signed_in? %>
-  <li>
-    <%=link_to 'Events', redirect_path %>
-  </li>
-<% end %>
+<div class mid>
+  <% if user_signed_in? %>
+    <h1>Welcome</h1>
+  <%else %>
+    <h1>Sign in</h1>
+  <% end %>
+</div>
