@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+}
+
+.foot{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+.foot h5{
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
