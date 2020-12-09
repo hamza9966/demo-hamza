@@ -1,7 +1,15 @@
-<ul>
-  <% @calendar_list.items.each do |calendar| %>
-    <li><%= calendar.summary %> (<%= calendar.id %>)</li>
-    <%=link_to 'Add Event',new_event_path(calendar.id) %>   <%=link_to 'View Events',events_path(calendar.id)%>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>Calender Listing</h1>
+  <ul>
+    <% @calendar_list.items.each do |calendar| %>
+      <div class="container_in">
 
+        <li><%= calendar.summary %> </li>
+        <div class="down">
+          <%=link_to 'Add Event',new_event_path(calendar.id),class: 'btn' %>
+          <%=link_to 'View Events',events_path(calendar.id),class: 'btn'%>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+</div>
