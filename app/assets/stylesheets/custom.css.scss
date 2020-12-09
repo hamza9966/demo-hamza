@@ -1,12 +1,56 @@
+
 body{
   color: white;
   background-color: #730E15;
   margin: 0px;
   padding: 0px;
   font-family: 'Righteous', cursive;
-  //background: url(gym.jpg);
   background-repeat: no-repeat;
   background-size: 1350px 1000px;
+}
+
+a{
+  text-decoration: none;
+}
+header{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 51px;
+  background: black;
+}
+.logo{
+  cursor: pointer;
+  width: 11rem;
+}
+.nav-area{
+  list-style: none;
+}
+.nav-area li{
+  display: inline-block;
+  padding: 0 15px;
+  text-transform: uppercase;
+}
+.nav-area li a{
+  transition: all .3s ease 0s;
+  color: #fff;
+}
+.nav-area li a:hover{
+  color: #006C87;
+}
+.btn-area {
+  cursor: pointer;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 11px;
+  border-radius: 7px;
+  background: #36a1bb;
 }
 
 .nav-main{
@@ -61,7 +105,7 @@ body{
 .container{
   position: absolute;
   margin: 0px 96px;
-  padding: 0px 153px;
+  padding: 0px 126px;
   width: 67%;
   border-radius: 48px;
   text-align: center;
@@ -71,14 +115,13 @@ body{
 }
 .navbar li{
   display: inline;
-
 }
+
 .msg{
   text-align: center;
   display: inline-flex;
   width: 55%;
   margin: 0 21rem;
-  margin-top: 4rem;
   height: 4rem;
 }
 .msg p{

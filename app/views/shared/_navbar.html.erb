@@ -1,13 +1,20 @@
-<header class="nav-main">
-    <ul class="navbar">
+<header>
+  <img class="logo" src="https://hrm-production.s3.amazonaws.com/uploads/company/logo/1/4435cc1e29.png" alt="kjkh">
+  <nav>
+    <ul class="nav-area">
       <% if user_signed_in? %>
-        <li> <%=link_to 'Home', '/' %></li>
-        <li> <%= link_to('Edit', edit_user_registration_path) %></li>
+        <li> <%=link_to 'Home', root_path %></li>
+        <li> <%=link_to('Edit', edit_user_registration_path) %></li>
         <li> <%=link_to 'Events', redirect_path %></li>
-        <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
-      <% else %>
-        <li><%= link_to('Register', new_user_registration_path) %></li>
-        <li><%= link_to('Login', new_user_session_path) %></li>
       <% end %>
     </ul>
+  </nav>
+  <div>
+    <% if user_signed_in? %>
+      <%= link_to'Logout', destroy_user_session_path, method: :delete,class: 'btn-area'%>
+    <% else %>
+      <%= link_to 'Register', new_user_registration_path,class: 'btn-area'%>
+      <%= link_to 'Login', new_user_session_path,class: 'btn-area'%>
+    <% end %>
+  </div>
 </header>
