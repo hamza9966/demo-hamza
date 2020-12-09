@@ -2,14 +2,23 @@
   <h1>Calender Listing</h1>
   <ul>
     <% @calendar_list.items.each do |calendar| %>
-      <div class="container_in">
-
-        <li><%= calendar.summary %> </li>
-        <div class="down">
-          <%=link_to 'Add Event',new_event_path(calendar.id),class: 'btn' %>
-          <%=link_to 'View Events',events_path(calendar.id),class: 'btn'%>
+      <%if @calendar_list&.items&.last != calendar %>
+          <div class="container_in">
+            <li><%= calendar.summary %> </li>
+            <div class="down">
+              <%#=link_to 'Add Event',new_event_path(calendar.id),class: 'btn' %>
+              <%=link_to 'View Events',events_path(calendar.id),class: 'btn'%>
+            </div>
+          </div>
+        <%else%>
+        <div class="container_in">
+          <li><%= calendar.summary %> </li>
+          <div class="down">
+            <%=link_to 'Add Event',new_event_path(calendar.id),class: 'btn' %>
+            <%=link_to 'View Events',events_path(calendar.id),class: 'btn'%>
+          </div>
         </div>
-      </div>
+        <%end%>
     <% end %>
   </ul>
 </div>

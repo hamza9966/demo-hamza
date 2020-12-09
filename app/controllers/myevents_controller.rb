@@ -1,12 +1,13 @@
 class MyeventsController < ApplicationController
+
   before_action :authenticate_user! , except: [:index]
+
   def index
 
   end
 
   def redirect
     client = Signet::OAuth2::Client.new(client_options)
-
     redirect_to client.authorization_uri.to_s
   end
 
@@ -17,7 +18,6 @@ class MyeventsController < ApplicationController
     response = client.fetch_access_token!
 
     session[:authorization] = response
-
     redirect_to calendars_url
   end
 
@@ -25,6 +25,27 @@ class MyeventsController < ApplicationController
     @event =  Event.new
     @cal=params[:calendar_id]
   end
+
+  def calendars
+    client = Signet::OAuth2::Client.new(client_options)
+    client.update!(session[:authorization])
+
+    service = Google::Apis::CalendarV3::CalendarService.new
+    service.authorization = client
+
+    @calendar_list = service.list_calendar_lists
+  end
+
+  def events
+    client = Signet::OAuth2::Client.new(client_options)
+    client.update!(session[:authorization])
+
+    service = Google::Apis::CalendarV3::CalendarService.new
+    service.authorization = client
+
+    @event_list = service.list_events(params[:calendar_id])
+  end
+
 
   def create_new_event
 
@@ -48,30 +69,9 @@ class MyeventsController < ApplicationController
                                                   summary: sum
                                                 })
     service.insert_event('primary', event)
-
+    flash[:notice] = "Event Added Successfully"
     redirect_to events_path('primary')
   end
-  
-  def calendars
-    client = Signet::OAuth2::Client.new(client_options)
-    client.update!(session[:authorization])
-
-    service = Google::Apis::CalendarV3::CalendarService.new
-    service.authorization = client
-
-    @calendar_list = service.list_calendar_lists
-  end
-
-  def events
-    client = Signet::OAuth2::Client.new(client_options)
-    client.update!(session[:authorization])
-
-    service = Google::Apis::CalendarV3::CalendarService.new
-    service.authorization = client
-
-    @event_list = service.list_events(params[:calendar_id])
-  end
-
 
   private
 
