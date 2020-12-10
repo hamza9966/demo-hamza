@@ -6,7 +6,6 @@ body{
   padding: 0px;
   font-family: 'Righteous', cursive;
   background-repeat: no-repeat;
-  background-size: 1350px 1000px;
 }
 
 a{
@@ -21,7 +20,11 @@ header{
   justify-content: space-between;
   align-items: center;
   padding: 9px 51px;
+  width: 100%;
   background: black;
+}
+.nav-btn{
+  margin-right:7rem ;
 }
 .logo{
   cursor: pointer;
@@ -29,15 +32,22 @@ header{
 }
 .nav-area{
   list-style: none;
+  margin-left: -130px;
 }
 .nav-area li{
   display: inline-block;
-  padding: 0 15px;
+  padding: 0px 63px;
   text-transform: uppercase;
 }
 .nav-area li a{
   transition: all .3s ease 0s;
   color: #fff;
+}
+.right-space{
+  margin-left: 8rem;
+}
+.top-space{
+  margin-top: 2rem;
 }
 .nav-area li a:hover{
   color: #006C87;
@@ -63,40 +73,6 @@ header{
   text-align: center;
 }
 
-.left{
-  position: absolute;
-  display: inline-block;
-  cursor: pointer;
-  left: 34px;
-  top: 12px;
-}
-.lefi{
-  text-align: center;
-
-}
-.lefi a{
-  font-family: 'Righteous', cursive;
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-  text-shadow: 5px 1px 5px rgba(255, 208, 0, 1);
-}
-.left img{
-  width: 60px;
-  margin: 0px 19px;
-}
-.mid{
-  display: block;
-  width: 25%;
-  margin: 0px auto;
-  height: 3rem;
-}
-.right{
-  position: absolute;
-  display: inline-block;
-  right: 20px;
-  top: 12px;
-}
 .navbar{
   display: inline;
   font-size: 20px;
@@ -125,22 +101,28 @@ header{
   height: 4rem;
 }
 .msg p{
-  margin-left: 277px;;
+  margin-left: 262px;
 }
 .down{
-  margin: 6rem 5rem;
+  margin: 6rem 4rem;
+}
+.on-logout{
+  margin-left: 5rem;
+}
+.white a{
+  color: white;
 }
 .form-group input{
   background-color: black;
   font-family: 'Righteous', cursive;
-  color: rgb(255,215,0);
+  color: #36a1bb;;
   text-align: center;
   display: block;
   width: 100%;
   font-size: 20px;
   margin: 11px 0px;
   padding: 2px 2px;
-  border: 2px solid rgb(255,215,0);
+  border: 2px solid #36a1bb;;
   border-radius: 9px;
 
 }

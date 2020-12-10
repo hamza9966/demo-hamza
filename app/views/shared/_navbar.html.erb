@@ -6,14 +6,18 @@
         <li> <%=link_to 'Home', root_path %></li>
         <li> <%=link_to('Edit', edit_user_registration_path) %></li>
         <li> <%=link_to 'Events', redirect_path %></li>
+        <%else %>
+        <div class="on-logout">
+          <li> <%=link_to 'Home', root_path %></li>
+        </div>
       <% end %>
     </ul>
   </nav>
-  <div>
+  <div class="nav-btn">
     <% if user_signed_in? %>
       <%= link_to'Logout', destroy_user_session_path, method: :delete,class: 'btn-area'%>
     <% else %>
-      <%= link_to 'Register', new_user_registration_path,class: 'btn-area'%>
+      <%= link_to 'Sign Up', new_user_registration_path,class: 'btn-area'%>
       <%= link_to 'Login', new_user_session_path,class: 'btn-area'%>
     <% end %>
   </div>

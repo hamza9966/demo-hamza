@@ -13,17 +13,19 @@
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+      <div class="top-space">
+          <%= f.submit "Log in",class: 'btn-area' %>
+          <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+          </div>
       </div>
     <% end %>
 
-
-      <%= f.submit "Log in",class: 'btn-area' %>
-
   <% end %>
-
+<div class="down">
   <%= render "devise/shared/links" %>
+</div>
+
 
 </div>
